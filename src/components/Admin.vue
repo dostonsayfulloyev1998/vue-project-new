@@ -32,7 +32,10 @@
                           <tbody>
                              <tr v-for="item in product" :key="item">
                                  <td> {{item.id}} </td>  <td>{{item.name}}</td>  <td>{{item.price}}</td>
-                               <td><img :src="item.image" width="100"></td> <td> <button class="btn btn-danger" type="button" @click="remove(item.id)">delete</button> </td>
+                               <td><img :src="item.image" width="100"></td> <td> <button class="btn btn-danger" type="button" @click="remove(item.id)">delete</button>
+                               <router-link :to="`/cart/${item.id}`" class="btn btn-primary">view</router-link>
+                             </td>
+
                              </tr>
                           </tbody>
 
@@ -44,9 +47,13 @@
 </template>
 
 <script>
+
 import axios from "axios"
 export default {
   name: "Admin",
+  components:{
+
+  },
   data(){
     return{
        product:[],

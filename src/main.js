@@ -4,12 +4,14 @@ import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
 import Shop from './components/Shop.vue'
 import Admin from './components/Admin.vue'
+import Cart from './components/Cart.vue'
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', component: Home },
   { path: '/shop', component: Shop },
-  { path: '/admin', component: Admin }
+  { path: '/admin', component: Admin },
+  { path: '/cart/:id', component: Cart }
 ]
 
 const router = new VueRouter({
